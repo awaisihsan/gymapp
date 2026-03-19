@@ -56,7 +56,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-6">
               {[
                 { label: "Classes/week",   value: fitnessClasses.length },
-                { label: "Instructors",    value: [...new Set(fitnessClasses.map((c) => c.instructor))].length },
+                { label: "Instructors",    value: Array.from(new Set(fitnessClasses.map((c) => c.instructor))).length },
                 { label: "Avg. duration",  value: `${Math.round(fitnessClasses.reduce((s, c) => s + c.duration, 0) / fitnessClasses.length)} min` },
               ].map(({ label, value }) => (
                 <div key={label}>

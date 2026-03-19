@@ -39,13 +39,6 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  const persist = (next: Booking[]) => {
-    setBookings(next);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    } catch {/* ignore */}
-  };
-
   const addBooking = useCallback((booking: Booking) => {
     setBookings((prev) => {
       const next = [booking, ...prev];
